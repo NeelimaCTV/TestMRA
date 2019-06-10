@@ -1,0 +1,110 @@
+FORMAT: 1A
+HOST: https://idcs-7fce3d4780274d019a20902ac6608f91.identity.oraclecloud.com
+
+# MRA Media Catalogue API
+
+Music catalogue API that provides access to MRA's digital media assets - artists, albums, songs etc.
+
+# Group Artist Resources
+Artists related digital media resources.
+
+## Search and create Artists [/catalogue/artists{?limit,name,country,genre}]
+
++ Parameters
+
+    + limit (number, optional)
+    
+        A limit on number of artists to be returned. Limit can range between 1 to 100.
+        
+        + Default: '10'
+        
+    + name (string, optional)
+        
+        A string to be used to search for a specific artist
+    
+    + country (string, optional)
+        
+        The country code an artist belongs to
+        
+        + Default: 'GB'
+        
+    + genre (String, optional)
+    
+        Genre of an artist
+
+### Search Artist [GET]
+Returns all MRA artists that match the specific criteria
+
++ Request (text/plain)
+
+    + Headers
+    
+            api-key: asdfasdfasds
+        
++ Response 200 (application/json)
+
+        [
+            {
+                "artist": "ARRehman"
+            },
+            {
+                "artist": "Ilayaraja"
+            },
+            {
+                "artist": "Shankar Mahadevan"
+            }
+        ]
+
+### Create Artist [POST]
+Creates an artist
+
+## Get and Update Artists [/catalogue/artists/{artist_id}]
+
+### Get Artist [GET]
+Returns details for the specific artist
+
+### Update artist [PUT]
+Update an existing artist
+
+## Get Artists Albums [/catalogue/artists/{artist_id}/albums]
+
+### Get artists albums [GET]
+Returns all the albums for a specific artist
+
+# Group Album Resources
+Album related digital media resources.
+
+## Search and Create Albums [/catalogue/albums{?limit,name,artist,genre}]
+
+### Search Album [GET]
+Returns all MRA albums that match the specific criteria
+
+### Create Album [POST]
+Creates an Album
+
+## Get and Update Album [/catalogue/albums/{album_id}]
+
+### Get album [GET]
+Returns details of specific album
+
+### Update album [PUT]
+Update a specific album
+
+# Group Songs Media
+Songs and Videos digital media resources.
+
+## Search and Create songs [/catalogue/songs{?limit,name,artist,genre}]
+
+### Search songs [GET]
+Returns all songs that match the specific criteria
+
+### Create song [POST]
+Creates an song
+
+## Get and Update songs [/catalogue/songs/{song_id}]
+
+### Get song [GET]
+Returns details of specific song
+
+### Update song [PUT]
+Update a specific song
